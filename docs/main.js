@@ -1,17 +1,17 @@
 // これから解析するハッシュのリスト
 const passwordHashList = [
-  'ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb'
+  'ccecc955643398a3dba568f7e034a8c99758fba6f89918b952aeb9e9659ef89c'
 ];
 
 // 使用する文字のリスト
 // 今回は0-9とa-zのみ
 const characters = [
-  'a', 'b', 'c', 'd'
+  '1', '2', '3', '4', '5', '6', '7', ','
 ];
 
 // 使用するスレッド数。CPUコア数*2 程度にしておく
 // 例えばCore i7なら4*2
-const MAX_THREADS = 4;
+const MAX_THREADS = 8;
 
 // 1スレッドあたり担当する頭文字の数
 // 頭文字で分割することでジョブを均等に分けることができる（はず……）
@@ -41,7 +41,7 @@ for(let i = 0; i < MAX_THREADS; i++) {
   const endCharacterIndex = Math.min(endIndexTmp, characters.length - 1);
 
   // パスワードの最長文字数
-  const maxLength = 4;
+  const maxLength = 15;
 
   // Workerを起動してパラメータを投げる
   const worker = new Worker('cracker.js');

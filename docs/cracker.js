@@ -32,11 +32,9 @@ function* generatePhrase(characters, startIndex, endIndex, length) {
 
 // パスワードを生成する関数
 function* generatePassword(characters, startIndex, endIndex, maxLength) {
-  for(let length = 1; length <= maxLength; length++) {
-    for(const phrase of generatePhrase(characters, startIndex, endIndex, length)) {
+    for(const phrase of generatePhrase(characters, startIndex, endIndex, maxLength)) {
       yield phrase;
     }
-  }
 }
 
 // メインスレッドからパラメータを渡されたら処理を開始する

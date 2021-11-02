@@ -21,7 +21,7 @@ const LENGTH_PER_THREAD = Math.ceil(characters.length / MAX_THREADS);
 
 // 処理中...と表示
 const indicator = document.createElement('div');
-indicator.innerText = '52';
+indicator.innerText = '★52';
 document.body.appendChild(indicator);
 
 
@@ -55,5 +55,6 @@ for(let i = 0; i < MAX_THREADS; i++) {
     const div = document.createElement('div');
     div.innerText = `${message.data.hash} -> ${message.data.password}`;
     document.body.appendChild(div);
+    worker.terminate();
   });
 }

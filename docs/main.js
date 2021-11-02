@@ -21,7 +21,7 @@ const LENGTH_PER_THREAD = Math.ceil(characters.length / MAX_THREADS);
 
 // 処理中...と表示
 const indicator = document.createElement('div');
-indicator.innerText = '★52 4';
+indicator.innerText = '★52 5';
 document.body.appendChild(indicator);
 
 

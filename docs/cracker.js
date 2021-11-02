@@ -58,6 +58,6 @@ self.addEventListener('message', async (message) => {
           password: phrase2
         });
       }
-      //console.log(phrase);
+      console.log(phrase);
     }
 });

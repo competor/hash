@@ -50,13 +50,14 @@ self.addEventListener('message', async (message) => {
     // 生成した各パスワードごとにハッシュを計算して
     // リストに一致するものがあればメインスレッドに送る
     for(const phrase of generatePassword(characters, startIndex, endIndex, maxLength)) {
-      const shaHash = await sha256(phrase);
+      const phrase2 = phrase.substr(1,7) + ',' + phrase.substr(8,7);
+      const shaHash = await sha256(phrase2);
       if(hashList.includes(shaHash)) {
         self.postMessage({
           hash: shaHash,
-          password: phrase
+          password: phrase2
         });
       }
-      console.log(phrase);
+      //console.log(phrase);
     }
 });

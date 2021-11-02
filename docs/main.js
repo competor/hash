@@ -1,6 +1,6 @@
 // これから解析するハッシュのリスト
 const passwordHashList = [
-  '91f008c2d94d84eabf4b973a2275786d8020e9eeac67a0a55745694593f01c93'
+  'ccecc955643398a3dba568f7e034a8c99758fba6f89918b952aeb9e9659ef89c'
 ];
 
 // 使用する文字のリスト
@@ -21,7 +21,7 @@ const LENGTH_PER_THREAD = Math.ceil(characters.length / MAX_THREADS);
 
 // 処理中...と表示
 const indicator = document.createElement('div');
-indicator.innerText = '★62 1';
+indicator.innerText = '★62 2';
 document.body.appendChild(indicator);
 
 

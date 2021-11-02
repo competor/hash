@@ -6,7 +6,7 @@ const passwordHashList = [
 // 使用する文字のリスト
 // 今回は0-9とa-zのみ
 const characters = [
-  'I', 'L'
+  '1', '2', '3', '4', '5', '6', '7'
 ];
 
 // 使用するスレッド数。CPUコア数*2 程度にしておく
@@ -21,7 +21,7 @@ const LENGTH_PER_THREAD = Math.ceil(characters.length / MAX_THREADS);
 
 // 処理中...と表示
 const indicator = document.createElement('div');
-indicator.innerText = '★52 5';
+indicator.innerText = '★62 1';
 document.body.appendChild(indicator);
 
 
@@ -38,7 +38,7 @@ for(let i = 0; i < MAX_THREADS; i++) {
   const endCharacterIndex = Math.min(endIndexTmp, characters.length - 1);
 
   // パスワードの最長文字数
-  const maxLength = 16;
+  const maxLength = 14;
 
   // Workerを起動してパラメータを投げる
   const worker = new Worker('cracker.js');

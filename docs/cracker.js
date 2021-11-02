@@ -32,7 +32,7 @@ function* generatePhrase(characters, startIndex, endIndex, length) {
 
 // パスワードを生成する関数
 function* generatePassword(characters, startIndex, endIndex, maxLength) {
-  for(let length = maxLength; length > 1; length--) {
+  for(let length = maxLength; length == maxLength; length--) {
     for(const phrase of generatePhrase(characters, startIndex, endIndex, length)) {
       yield phrase;
     }
@@ -58,6 +58,6 @@ self.addEventListener('message', async (message) => {
           password: phrase2
         });
       }
-      console.log(phrase2);
+      console.log(phrase + ' : ' + phrase2);
     }
 });

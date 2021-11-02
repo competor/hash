@@ -1,12 +1,12 @@
 // これから解析するハッシュのリスト
 const passwordHashList = [
-  'ccecc955643398a3dba568f7e034a8c99758fba6f89918b952aeb9e9659ef89c'
+  '91f008c2d94d84eabf4b973a2275786d8020e9eeac67a0a55745694593f01c93'
 ];
 
 // 使用する文字のリスト
 // 今回は0-9とa-zのみ
 const characters = [
-  '1', '2', '3', '4', '5', '6', '7', ','
+  'I', 'L', ','
 ];
 
 // 使用するスレッド数。CPUコア数*2 程度にしておく
@@ -24,9 +24,6 @@ const indicator = document.createElement('div');
 indicator.innerText = '処理中...';
 document.body.appendChild(indicator);
 
-const div = document.createElement('div');
-    div.innerText = `a`;
-    document.body.appendChild(div);
 
 // MAX_THREADS個のWorkerを起動して計算させる
 for(let i = 0; i < MAX_THREADS; i++) {
